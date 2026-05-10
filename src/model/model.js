@@ -31,7 +31,7 @@ const movieSchema =  new mongoose.Schema({
     },
 
     releaseDate :{
-        type : String,  
+        type : Date,  
         required : true
     },
 
@@ -41,10 +41,11 @@ const movieSchema =  new mongoose.Schema({
     },
 
     releaseStatus:{
-        type :String,
-        required:true,
-        default : "RELEASED"
-    },
+    type : String,
+    enum : ['RELEASED','UPCOMING'],
+    default : 'RELEASED'
+},
+
 },{timestamps : true});
 
 const Movie = mongoose.model('Movie',movieSchema);
