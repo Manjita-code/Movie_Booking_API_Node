@@ -5,12 +5,14 @@ const movieSchema =  new mongoose.Schema({
     
     name :{
         type :String,
-        required :true
+        required :true,
+        minlength : 10
     },
 
     description :{
         type : String,
-        required : true
+        required : true,
+        minlength:5
     },
 
     casts :{
